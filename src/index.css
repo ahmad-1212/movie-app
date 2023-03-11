@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+html,
+body,
+#root,
+.app,
+.content {
+  width: 100%;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.genre-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .genre-section {
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+
+  .genre-section::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.info-section {
+  display: flex;
+  gap: 30px;
+}
+
+@media only screen and (max-width: 900px) {
+  .info-section {
+    flex-direction: column;
+  }
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, max-content));
+  gap: 30px;
+}
+
+.input {
+  padding: 8px 15px;
+  font-size: 18px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .input {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  width: 500px;
+  height: 100vh;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    width: 85%;
+  }
 }
